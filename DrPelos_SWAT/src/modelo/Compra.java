@@ -8,6 +8,11 @@ package modelo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import modelo.pago.FormaPago;
+import modelo.personas.Cliente;
+import modelo.personas.PersonalCaja;
+import modelo.servicios.Servicio;
+
 /**
  *
  * @author 59399

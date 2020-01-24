@@ -5,6 +5,9 @@
  */
 package modelo;
 
+import modelo.personas.Administrador;
+import modelo.personas.JefeBodega;
+
 /**
  *
  * @author 59399

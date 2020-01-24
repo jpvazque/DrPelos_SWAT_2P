@@ -7,6 +7,8 @@ package modelo;
 
 import java.util.ArrayList;
 
+import modelo.personas.Administrador;
+
 /**
  *
  * @author 59399

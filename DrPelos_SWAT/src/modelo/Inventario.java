@@ -8,6 +8,8 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.servicios.Servicio;
+
 /**
  *
  * @author 59399

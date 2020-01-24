@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package modelo.personas;
 
 import java.util.ArrayList;
+
+import modelo.servicios.Servicio_EntregaProducto;
 
 /**
  *

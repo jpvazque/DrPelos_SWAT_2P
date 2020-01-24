@@ -3,19 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package modelo.servicios;
 
 /**
  *
  * @author 59399
  */
-public class Cliente extends Persona{
-
-    public Cliente(String id, String nombre, String apellido, String direccion, String telefono) {
-        super(id, nombre, apellido, direccion, telefono);
-    }
+public interface Servicio {
     
 }
-
-
 

@@ -3,27 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package modelo.documentos;
+
+import modelo.Compra;
 
 /**
  *
  * @author 59399
  */
-public class NotaCredito {
-    String idNota;
+public class Factura {
+    String idFactura;
     Compra compra;
 
-    public NotaCredito(String idNota, Compra compra) {
-        this.idNota = idNota;
+    public Factura(String idFactura, Compra compra) {
+        this.idFactura = idFactura;
         this.compra = compra;
     }
 
-    public String getIdNota() {
-        return idNota;
+    public String getIdFactura() {
+        return idFactura;
     }
 
-    public void setIdNota(String idNota) {
-        this.idNota = idNota;
+    public void setIdFactura(String idFactura) {
+        this.idFactura = idFactura;
     }
 
     public Compra getCompra() {
