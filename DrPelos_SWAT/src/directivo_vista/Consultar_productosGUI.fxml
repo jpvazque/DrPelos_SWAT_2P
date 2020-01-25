@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="directivo_vista.Consultar_productosController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="602.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="910.0" />
+      <TableView fx:id="tableView" layoutX="-5.0" layoutY="227.0" prefHeight="375.0" prefWidth="917.0">
+        <columns>
+          <TableColumn prefWidth="52.0" text="Id" />
+          <TableColumn prefWidth="144.0" text="Nombre" />
+            <TableColumn prefWidth="318.0" text="Descripción" />
+            <TableColumn prefWidth="122.0" text="Precio($)" />
+            <TableColumn prefWidth="134.0" text="Categoría" />
+            <TableColumn prefWidth="146.0" text="Unidades disponibles" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="27.0" layoutY="16.0" opacity="0.65">
+         <image>
+            <Image url="@../recursos/back.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="categoriaCb" layoutX="518.0" layoutY="147.0" onAction="#filtrar" prefHeight="25.0" prefWidth="165.0" />
+      <Button layoutX="754.0" layoutY="112.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="79.0" text="FILTRAR" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="89.0" prefHeight="35.0" prefWidth="215.0" text="Filtrar productos" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idTf" layoutX="190.0" layoutY="134.0" onKeyPressed="#filtrar" prefHeight="25.0" prefWidth="157.0" promptText="Ej. C001" />
+      <Label alignment="CENTER" layoutX="90.0" layoutY="134.0" prefHeight="25.0" prefWidth="92.0" text="Id:" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombreTf" layoutX="190.0" layoutY="175.0" onKeyPressed="#filtrar" prefHeight="25.0" prefWidth="157.0" promptText="Ej. Pedigree Adulto 25kg" />
+      <Label alignment="CENTER" layoutX="90.0" layoutY="175.0" prefHeight="25.0" prefWidth="92.0" text="Nombre:" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="406.0" layoutY="147.0" prefHeight="25.0" prefWidth="92.0" text="Categoría:" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="limpiarBtn" layoutX="754.0" layoutY="176.0" mnemonicParsing="false" onAction="#presionar_limpiarBtn" prefHeight="25.0" prefWidth="79.0" text="LIMPIAR" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="regresarBtn" layoutX="23.0" layoutY="20.0" mnemonicParsing="false" onAction="#presionar_regresarBtn" opacity="0.0" prefHeight="35.0" prefWidth="43.0" />
+      <Line endX="202.0" layoutX="-19.0" layoutY="120.0" opacity="0.23" startX="61.0" stroke="#be5108" />
+      <ImageView fitHeight="56.0" fitWidth="55.0" layoutX="40.0" layoutY="134.0" opacity="0.15">
+         <image>
+            <Image url="@../recursos/huella.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="161.0" layoutY="43.0" prefHeight="42.0" prefWidth="613.0" text="Productos" textFill="#007f7f">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="35.0" />
+         </font>
+      </Label>
+      <Line endX="512.0" layoutX="263.0" layoutY="87.0" opacity="0.8" startX="-100.0" stroke="#007f7f" />
+      <Line endX="546.0" layoutX="230.0" layoutY="94.0" opacity="0.23" startX="67.0" stroke="#be5108" />
+   </children>
+</AnchorPane>
