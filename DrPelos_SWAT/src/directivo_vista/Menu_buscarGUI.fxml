@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="directivo_vista.Menu_buscarController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="600.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="906.0" />
+      <ImageView fitHeight="194.0" fitWidth="132.0" layoutX="774.0" layoutY="406.0">
+         <image>
+            <Image url="@../recursos/huellas.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="52.0" prefHeight="35.0" prefWidth="889.0" text="Menú de consultas" textFill="#007f7f">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="35.0" />
+         </font>
+      </Label>
+      <GridPane alignment="TOP_CENTER" hgap="149.0" layoutX="132.0" layoutY="177.0" prefHeight="286.0" prefWidth="645.0" vgap="50.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="428.0" minWidth="10.0" prefWidth="395.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="394.0" minWidth="10.0" prefWidth="394.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="serviciosBtn" mnemonicParsing="false" onAction="#presionar_serviciosBtn" prefHeight="129.0" prefWidth="256.0" text="SERVICIOS" textFill="#504d4d">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="documentoBtn" mnemonicParsing="false" onAction="#presionar_documentosBtn" prefHeight="118.0" prefWidth="256.0" text="DOCUMENTOS" textFill="#504d4d" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="usuariosBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#presionar_usuariosBtn" prefHeight="136.0" prefWidth="251.0" text="USUARIOS" textFill="#504d4d" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="productosBtn" mnemonicParsing="false" onAction="#presionar_productosBtn" prefHeight="148.0" prefWidth="259.0" text="PRODUCTOS" textFill="#504d4d" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="S_RESIZE" />
+         </cursor>
+      </GridPane>
+      <ImageView fitHeight="194.0" fitWidth="132.0" layoutX="774.0" layoutY="203.0" opacity="0.11">
+         <image>
+            <Image url="@../recursos/huellas.png" />
+         </image>
+      </ImageView>
+      <Line endX="546.0" layoutX="233.0" layoutY="94.0" opacity="0.8" startX="-100.0" stroke="#007f7f" />
+      <Line endX="546.0" layoutX="233.0" layoutY="101.0" opacity="0.23" startX="67.0" stroke="#be5108" />
+      <ImageView fitHeight="194.0" fitWidth="132.0" layoutX="769.0" layoutY="5.0" opacity="0.03">
+         <image>
+            <Image url="@../recursos/huellas.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
