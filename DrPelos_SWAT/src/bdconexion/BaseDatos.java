@@ -15,6 +15,9 @@ package bdconexion;
     import java.sql.Statement;
     import java.time.LocalDate;
     import java.time.LocalTime;
+import java.util.LinkedList;
+import java.util.List;
+import modelo.Producto;
 
     public class BaseDatos {
 
@@ -23,7 +26,7 @@ package bdconexion;
         
         // Datos de la BD
         private static final String DB = "dr_pelos";
-        private static final String HOST = "192.168.56.1"; 
+        private static final String HOST = "localhost"; 
         //private static final String LOCAL = "192.168.136.54";
         private static final String PUERTO = "3306";
 
@@ -33,7 +36,7 @@ package bdconexion;
         
         
         private static String usuario = "root";
-        private static String password = "example";
+        private static String password = "root";
 
         public static Connection conectarMySQL() throws SQLException {
             Connection conn = null;
@@ -93,27 +96,6 @@ package bdconexion;
             cerrarConexion(conn);
         }
 
-        public static void insertarOperador(String cedula, String nombre, String apellido,
-                String correo, String password) throws SQLException {
-            hacerQuery("CREATE USER `" + cedula + "` IDENTIFIED BY '" + password + "'");
-
-            String sql_process_order = "{call insertOperador(?,?,?,?,?)}";
-            Connection conn = conectarMySQL();
-
-            if (conn == null) {
-                throw new SQLException("Conexion fallida");
-            }
-
-            CallableStatement callableS = conn.prepareCall(sql_process_order);
-            callableS.setString(1, cedula);
-            callableS.setString(2, nombre);
-            callableS.setString(3, apellido);
-            callableS.setString(4, correo);
-            callableS.setString(5, password);
-            callableS.execute();
-            cerrarConexion(conn);
-        }
-        
         
         private static void cerrarConexion(Connection conn) throws SQLException {
             try {
@@ -134,32 +116,38 @@ package bdconexion;
         }
         
         
-        /**
-        public static List<Medicamento> obtenerMedicamentos() throws SQLException {
+        
+        public static List<Producto> obtenerProductos() throws SQLException {
             //Instancia de la clase ConexionBD
             Connection conn = conectarMySQL();
-            List<Medicamento> meds = new LinkedList<>();
-            ResultSet rs = seleccionarDatos("SELECT * FROM centro_dermatologico.reporteMedicamento", conn);
-
+            Statement sql = conn.createStatement();
+            String s = "call productos_nombre('',1)";
+            
+            ResultSet rs = sql.executeQuery(s);
+            
+            List<Producto> productos = new LinkedList<>();
             if (rs == null) {
-                throw new SQLException("Medicamentos no encontrados.\nInt�ntelo m�s tarde. ");
+                throw new SQLException("Productos no encontrados.\nIntentelo mas tarde. ");
             }
             while(rs.next()){
-            meds.add(obtenerMed(rs));
+                productos.add(obtenerProd(rs));
             }
 
             cerrarConexion(conn);
-            return meds;
+            return productos;
         }
         
-        private static Medicamento obtenerMed(ResultSet rs) throws SQLException {
-            String nombre = rs.getString("Id_Medicamento");
-            String marca = rs.getString("marca");
-            String gramaje = rs.getString("Gramaje");
-            Medicamento m = new Medicamento(nombre, marca, gramaje);
-            return m;
+        private static Producto obtenerProd(ResultSet rs) throws SQLException {
+            
+            String codigo = rs.getString("producto_id");
+            String nombre = rs.getString("nombre");
+            String cat = rs.getString("categoria");
+            String des = rs.getString("descripcion");
+            float costo = rs.getFloat("precio");
+            Producto p = new Producto(codigo,nombre,cat, des, costo);
+            return p;
         }
-        
+        /**
         
         public static void insertarHistorial(String cedula, String nombrePat, String obser) throws SQLException {
             int id_pat = obtenerPatologia1(nombrePat);
