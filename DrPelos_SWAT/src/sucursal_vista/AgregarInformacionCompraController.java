@@ -107,12 +107,14 @@ public class AgregarInformacionCompraController implements Initializable {
         alert.setTitle("Cliente no registrado");
         alert.setHeaderText("No se encontró un cliente registrado con ese número de cédula");
         alert.setContentText("¿Desea agregar un nuevo cliente?");
-        ButtonType okBtn = new ButtonType("OK");
-        ButtonType intentatBtn = new ButtonType("Intentar nuevamente");
-        alert.getButtonTypes().setAll(okBtn);
+        ButtonType siBtn = new ButtonType("Si");
+        ButtonType intentarBtn = new ButtonType("Intentar nuevamente");
+        alert.getButtonTypes().setAll(siBtn,intentarBtn);
         Optional<ButtonType> result =alert.showAndWait();
-        if((result.get()==okBtn)){
+        if((result.get()==siBtn)){
             abrirVentana("AgregarClienteGUI.fxml");
+        }else{
+            alert.close();
         }
         
     }

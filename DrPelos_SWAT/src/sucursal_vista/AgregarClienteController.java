@@ -6,12 +6,16 @@
 package sucursal_vista;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -63,7 +67,20 @@ public class AgregarClienteController implements Initializable {
         
     }
     private void crearUsuario(){
-        System.out.println("Crear usuario");
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Registro de cliente");
+        alert.setHeaderText("El cliente se ha registrado exitosamente");
+        alert.setContentText("¿Desea agregar un nuevo cliente?");
+        ButtonType okBtn = new ButtonType("OK");
+        alert.getButtonTypes().setAll(okBtn);
+        Optional<ButtonType> result =alert.showAndWait();
+        if((result.get()==okBtn)){
+            System.out.println("Crear usuario");
+            Stage stage = (Stage) alertaLbl.getScene().getWindow();
+            stage.close();
+        }
+        
     }
     
     
