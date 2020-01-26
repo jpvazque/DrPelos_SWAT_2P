@@ -57,11 +57,11 @@ public class Consultar_productosController implements Initializable {
     
     private void llenar_categoriaCb(){
         Collection<String> categorias = new ArrayList();
-        categorias.add("Categoría 1");
-        categorias.add("Categoría 2");
-        categorias.add("Todas las Categorías");
+        categorias.add("Categoria 1");
+        categorias.add("Categoria 2");
+        categorias.add("Todas las Categor�as");
         categoriaCb.getItems().addAll(categorias);
-        categoriaCb.setValue("Todas las Categorías");
+        categoriaCb.setValue("Todas las Categorias");
              
         
     }
@@ -70,7 +70,7 @@ public class Consultar_productosController implements Initializable {
         System.out.println("Limpiar");
         idTf.setText("");
         nombreTf.setText("");
-        categoriaCb.setValue("Todas las Categorías");
+        categoriaCb.setValue("Todas las Categorias");
     }   
 
     @FXML

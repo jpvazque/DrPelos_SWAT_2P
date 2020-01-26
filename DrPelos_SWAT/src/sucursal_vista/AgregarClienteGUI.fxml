@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="601.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sucursal_vista.AgregarClienteController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="612.0" stroke="#504d4d" strokeType="INSIDE" strokeWidth="0.0" width="501.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="52.0" prefHeight="42.0" prefWidth="276.0" text="Agregar Cliente" textFill="#007f7f">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="35.0" />
+         </font>
+      </Label>
+      <Line endX="368.0" layoutX="78.0" layoutY="101.0" opacity="0.23" startX="67.0" stroke="#be5108" />
+      <Line endX="372.0" layoutX="73.0" layoutY="94.0" opacity="0.8" startX="11.0" stroke="#007f7f" />
+      <TextField id="passTxt" fx:id="cedulaTf" layoutX="127.0" layoutY="164.0" prefHeight="36.0" prefWidth="255.0" promptText="Ej. 0954190823" />
+      <Label layoutX="127.0" layoutY="147.0" prefHeight="17.0" prefWidth="70.0" text="Cédula" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="passTxt" fx:id="nombreTf" layoutX="127.0" layoutY="228.0" prefHeight="36.0" prefWidth="255.0" promptText="Ej. Pablo Castro" />
+      <Label layoutX="127.0" layoutY="212.0" prefHeight="17.0" prefWidth="70.0" text="Nombre" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="passTxt" fx:id="direccionTf" layoutX="127.0" layoutY="293.0" prefHeight="36.0" prefWidth="255.0" promptText="Ej. Prosperina Coop. 31 Agosto" />
+      <Label layoutX="127.0" layoutY="275.0" prefHeight="17.0" prefWidth="98.0" text="Dirección" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="passTxt" fx:id="telefonoTf" layoutX="127.0" layoutY="426.0" prefHeight="36.0" prefWidth="255.0" promptText="Ej.  20018203" />
+      <Label layoutX="127.0" layoutY="404.0" prefHeight="17.0" prefWidth="98.0" text="Teléfono" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="passTxt" fx:id="correoTf" layoutX="127.0" layoutY="359.0" prefHeight="36.0" prefWidth="255.0" promptText="Ej. ejemplo@mail.com" />
+      <Label layoutX="130.0" layoutY="338.0" prefHeight="17.0" prefWidth="98.0" text="Correo" textFill="#504d4d">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button centerShape="false" layoutX="147.0" layoutY="521.0" mnemonicParsing="false" onAction="#revisar_estado" prefHeight="42.0" prefWidth="200.0" text="Agregar cliente" textFill="#4d4b4b">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="alertaLbl" layoutX="127.0" layoutY="498.0" prefHeight="17.0" prefWidth="255.0" text="Label" textFill="#bf1919df">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
