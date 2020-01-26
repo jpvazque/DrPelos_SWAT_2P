@@ -5,7 +5,7 @@
  */
 package modelo.personas;
 
-import modelo.BaseDatos;
+import bdconexion.BaseDatos;
 
 /**
  *
